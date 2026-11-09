@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+
+@theme {
+	--font-sans: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+	--font-mono:
+		ui-monospace, 'Cascadia Mono', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+}
+
+body {
+	line-height: 1.6;
+}
