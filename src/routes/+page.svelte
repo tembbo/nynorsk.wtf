@@ -1,6 +1,17 @@
 <script>
 	const rawQuestions = [
 		{
+			text: 'Kva er nynorsk?',
+			options: [
+				'Ei dialekt',
+				'Eit framandspråk',
+				'Eit av dei to offisielle norske skriftspråka',
+				'En norskgjort version af dansk'
+			],
+			correct: 2,
+			explanation: 'Ingen lureri her, me tek det gradvis.'
+		},
+		{
 			text: 'Eg veit at du er lei av meg no, Kine, men kva er kløyvd infinitiv?',
 			options: [
 				'Spør du meg (Albert), har eg framleis inga aning.',
