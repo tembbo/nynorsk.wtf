@@ -69,7 +69,7 @@
 		if (percentage >= 80) return 'Det er bekymringsverdig kor god du er på nynorsk.';
 		if (percentage >= 50)
 			return 'Bra jobba! No står det berre att å spørja seg sjølv kvifor ein veit så mykje om nynorsk.';
-		return 'Du ville ha fått ein høgare poengsum ved å gjetta heilt tilfeldig';
+		return 'Du ville ha fått ein høgare poengsum ved å gjette heilt tilfeldig';
 	});
 
 	function startQuiz() {
