@@ -12,6 +12,12 @@
 			explanation: 'Ingen lureri her, me tek det gradvis.'
 		},
 		{
+			text: 'Kva kallar ein det når eit ord kan skrivast på fleire rette måtar på nynorsk?',
+			options: ['Sideformer', 'Rettskrivingsvariasjon', 'Valfrie ord', 'Valfrie former'],
+			correct: 3,
+			explanation: 'Som du kanskje skjønar, så likar ikkje eg valfridom så godt.'
+		},
+		{
 			text: 'Eg veit at du er lei av meg no, Kine, men kva er kløyvd infinitiv?',
 			options: [
 				'Spør du meg (Albert), har eg framleis inga aning.',
@@ -22,6 +28,18 @@
 			correct: 0,
 			explanation:
 				'Eg har faktisk ikkje snøring, men du kan jo prøve å tyde det som står på Språkrådet.'
+		},
+		{
+			text: 'Som du kanskje veit, får hokjønnsord -a i bestemt form eintall og -er / -ene i fleirtall. Korleis bøyer ein då hokjønnsordet "setning"?',
+			options: [
+				'ei setning - setninga - setningar - setningane',
+				'ei setning - setninga - setninger - setningene',
+				'ei setning - setningen - setninger - setningene',
+				'ei setning - setningen - setningar - setningane'
+			],
+			correct: 0,
+			explanation:
+				'Jøss, hokjønnsord som sluttar på -ing skal visst ha hankjønnsending i fleirtal. Nydeleg.'
 		}
 	];
 
