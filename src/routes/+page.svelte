@@ -120,7 +120,7 @@
 
 	function explanationClasses() {
 		const base =
-			'flex min-h-24 w-full max-w-[600px] items-center justify-center self-center rounded-md border-l-4 p-4 text-center text-lg break-words text-balance';
+			'flex min-h-24 w-full max-w-150 items-center justify-center self-center rounded-md border-l-4 p-4 text-center text-lg wrap-break-word text-balance';
 
 		if (!answered) {
 			return `${base} invisible`;
@@ -141,7 +141,7 @@
 	class="flex min-h-dvh justify-center bg-white p-2 font-sans text-neutral-900 md:p-5"
 	aria-live="polite"
 >
-	<div class="flex w-full max-w-[800px] flex-col">
+	<div class="flex w-full max-w-200 flex-col">
 		{#if screen === 'start'}
 			<section
 				class="flex flex-1 flex-col items-center justify-between px-3 py-8 text-center md:px-5 md:py-12"
@@ -156,7 +156,7 @@
 						</p>
 					</header>
 					<button
-						class="w-full max-w-[200px] rounded-xl bg-amber-600 px-[30px] py-4 text-base font-bold text-neutral-900 hover:bg-amber-700 md:max-w-[250px] md:text-lg"
+						class="w-full max-w-50 rounded-xl bg-amber-600 px-7.5 py-4 text-base font-bold text-neutral-900 hover:bg-amber-700 md:max-w-62.5 md:text-lg"
 						onclick={startQuiz}
 					>
 						Byrje quizen
@@ -170,7 +170,7 @@
 				</footer>
 			</section>
 		{:else if screen === 'quiz' && currentQuestion}
-			<section class="flex flex-1 flex-col gap-[15px] p-3 md:p-5">
+			<section class="flex flex-1 flex-col gap-3.75 p-3 md:p-5">
 				<div
 					class="flex h-10 w-full items-center justify-center text-sm text-neutral-600 md:text-base"
 				>
@@ -178,7 +178,7 @@
 				</div>
 
 				<div
-					class="flex min-h-16 w-full max-w-[600px] items-center justify-center self-center rounded-xl border-2 border-neutral-300 bg-neutral-100 p-4 text-center font-mono text-base text-balance break-words text-neutral-900 shadow-inner md:p-5 md:text-[1.25rem]"
+					class="flex min-h-16 w-full max-w-150 items-center justify-center self-center rounded-xl border-2 border-neutral-300 bg-neutral-100 p-4 text-center font-mono text-base text-balance wrap-break-word text-neutral-900 shadow-inner md:p-5 md:text-xl"
 				>
 					<div>{currentQuestion.text}</div>
 				</div>
@@ -189,11 +189,11 @@
 					{/if}
 				</div>
 
-				<ul class="mt-auto flex w-full max-w-[600px] flex-col gap-3 self-center md:gap-[15px]">
+				<ul class="mt-auto flex w-full max-w-150 flex-col gap-3 self-center md:gap-3.75">
 					{#each currentQuestion.options as option, index}
 						<li class={optionClasses(index)}>
 							<button
-								class="flex w-full items-center gap-[15px] rounded-[inherit] bg-transparent px-[15px] py-3 text-left font-mono text-neutral-900 md:px-5 md:py-[15px]"
+								class="flex w-full items-center gap-3.75 rounded-[inherit] bg-transparent px-3.75 py-3 text-left font-mono text-neutral-900 md:px-5 md:py-3.75"
 								onclick={() => selectOption(index)}
 							>
 								<span
@@ -201,14 +201,16 @@
 								>
 									{index + 1}
 								</span>
-								<span class="flex-1 font-bold break-words text-neutral-900">{option}</span>
+								<span class="min-w-0 flex-1 font-bold wrap-break-word text-neutral-900"
+									>{option}</span
+								>
 							</button>
 						</li>
 					{/each}
 				</ul>
 
 				<button
-					class="w-full max-w-[200px] self-center rounded-xl bg-amber-600 px-[30px] py-[15px] text-base font-bold text-neutral-900 hover:bg-amber-700 md:max-w-[250px] md:text-lg"
+					class="w-full max-w-50 self-center rounded-xl bg-amber-600 px-7.5 py-3.75 text-base font-bold text-neutral-900 hover:bg-amber-700 md:max-w-62.5 md:text-lg"
 					class:invisible={!answered}
 					onclick={nextQuestion}
 				>
@@ -218,11 +220,11 @@
 		{:else if screen === 'results'}
 			<section class="flex flex-1 flex-col px-3 py-8 text-center md:px-5 md:py-12">
 				<div class="flex flex-1 flex-col items-center justify-center gap-7">
-					<h2 class="text-[2rem] text-amber-600 md:text-[3rem]">Du overlevde!</h2>
-					<div class="text-[3rem] font-bold text-amber-600 md:text-[5rem]">
+					<h2 class="text-[2rem] text-amber-600 md:text-5xl">Du overlevde!</h2>
+					<div class="text-5xl font-bold text-amber-600 md:text-[5rem]">
 						{score} / {questions.length}
 					</div>
-					<p class="max-w-[32rem] text-lg text-balance text-neutral-700">{resultMessage}</p>
+					<p class="max-w-lg text-lg text-balance text-neutral-700">{resultMessage}</p>
 				</div>
 
 				<footer
