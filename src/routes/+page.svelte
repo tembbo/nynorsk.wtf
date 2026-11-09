@@ -1,18 +1,16 @@
 <script>
-	import { onMount } from 'svelte';
-
 	const rawQuestions = [
 		{
-			text: '1',
-			options: ['1', '2', '3', '4'],
-			correct: 1,
-			explanation: 'explanation'
-		},
-		{
-			text: '2',
-			options: ['1', '2', '3', '4'],
-			correct: 1,
-			explanation: 'explanation'
+			text: 'Eg veit at du er lei av meg no, Kine, men kva er kløyvd infinitiv?',
+			options: [
+				'Spør du meg (Albert), har eg framleis inga aning.',
+				'https://sprakradet.no/spraksporsmal-og-svar/kloyvd-infinitiv-/',
+				'Det ligg i ordet: oppdelt infinitt verbalform',
+				'Når eit verb kan ha to ulike bøyingsformer i fortid.'
+			],
+			correct: 0,
+			explanation:
+				'Eg har faktisk ikkje snøring, men du kan jo prøve å tyde det som står på Språkrådet.'
 		}
 	];
 
@@ -122,7 +120,7 @@
 
 	function explanationClasses() {
 		const base =
-			'flex min-h-24 w-full max-w-[600px] items-center justify-center self-center rounded-md border-l-4 p-4 text-center text-lg text-balance';
+			'flex min-h-24 w-full max-w-[600px] items-center justify-center self-center rounded-md border-l-4 p-4 text-center text-lg break-words text-balance';
 
 		if (!answered) {
 			return `${base} invisible`;
@@ -132,25 +130,6 @@
 			? `${base} border-emerald-600 bg-emerald-600/10`
 			: `${base} border-orange-600 bg-orange-600/10`;
 	}
-
-	onMount(() => {
-		function handleKeydown(event) {
-			if (screen !== 'quiz') return;
-
-			if (event.key >= '1' && event.key <= '4' && !answered) {
-				selectOption(Number(event.key) - 1);
-			} else if ((event.key === 'Enter' || event.key === ' ') && answered) {
-				event.preventDefault();
-				nextQuestion();
-			}
-		}
-
-		window.addEventListener('keydown', handleKeydown);
-
-		return () => {
-			window.removeEventListener('keydown', handleKeydown);
-		};
-	});
 </script>
 
 <svelte:head>
@@ -173,7 +152,7 @@
 							Nynorsk er enkelt
 						</h1>
 						<p class="text-lg text-neutral-600 italic md:text-2xl">
-							Nynorsk er eit skriftspråk med standardiserte reglar og grammatikk.
+							Nynorsk er eit skriftspråk med standardiserte reglar og einsarta grammatikk.
 						</p>
 					</header>
 					<button
@@ -199,7 +178,7 @@
 				</div>
 
 				<div
-					class="flex min-h-16 w-full max-w-[600px] items-center justify-center self-center overflow-x-auto rounded-xl border-2 border-neutral-300 bg-neutral-100 p-4 text-center font-mono text-base whitespace-nowrap text-neutral-900 shadow-inner md:p-5 md:text-[1.25rem]"
+					class="flex min-h-16 w-full max-w-[600px] items-center justify-center self-center rounded-xl border-2 border-neutral-300 bg-neutral-100 p-4 text-center font-mono text-base text-balance break-words text-neutral-900 shadow-inner md:p-5 md:text-[1.25rem]"
 				>
 					<div>{currentQuestion.text}</div>
 				</div>
@@ -222,7 +201,7 @@
 								>
 									{index + 1}
 								</span>
-								<span class="flex-1 font-bold text-neutral-900">{option}</span>
+								<span class="flex-1 font-bold break-words text-neutral-900">{option}</span>
 							</button>
 						</li>
 					{/each}
