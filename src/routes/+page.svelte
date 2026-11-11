@@ -18,6 +18,12 @@
 			explanation: 'Som du kanskje skjønar, så likar ikkje eg valfridom så godt.'
 		},
 		{
+			text: 'Kva for eit av desse verba skal ende på a ifølgje Språkrådet?',
+			options: ['kaste', 'bake', 'skrive', 'lyse'],
+			correct: 1,
+			explanation: 'Du lurer sikkert på kvifor? Har ikkje peiling 🫠'
+		},
+		{
 			text: 'Eg veit at du er lei av meg no, Kine, men kva er kløyvd infinitiv?',
 			options: [
 				'Spør du meg (Albert), har eg framleis inga aning.',
@@ -30,7 +36,7 @@
 				'Eg har faktisk ikkje snøring, men du kan jo prøve å tyde det som står på Språkrådet.'
 		},
 		{
-			text: 'Som du kanskje veit, får hokjønnsord -a i bestemt form eintall og -er / -ene i fleirtall. Korleis bøyer ein då hokjønnsordet "setning"?',
+			text: 'Som du kanskje veit, får hokjønnsord -a i bunden form eintal og -er / -ene i fleirtal. Korleis bøyer ein då hokjønnsordet "setning"?',
 			options: [
 				'ei setning - setninga - setningar - setningane',
 				'ei setning - setninga - setninger - setningene',
