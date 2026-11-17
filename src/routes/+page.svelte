@@ -24,16 +24,27 @@
 			explanation: 'Du lurer sikkert på kvifor? Har ikkje peiling 🫠'
 		},
 		{
+			text: 'Korleis teller ein på nynorsk?',
+			options: [
+				'1, 2, 3, 4, 5, 6, ...',
+				'ein, to, tri, fire, fæm, sæks, sju',
+				'I, II, III, IV, V, VI...',
+				'tipun, tegnip, odtap, besa, armun, kat, tovap ...'
+			],
+			correct: 0,
+			explanation:
+				'Det hadde vel ikkje vore så dumt å innføre eit eige talsystem i nynorsk likevel? (det var ironisk, om du ikkje skjønte det 🙂)'
+		},
+		{
 			text: 'Eg veit at du er lei av meg no, Kine, men kva er kløyvd infinitiv?',
 			options: [
 				'Spør du meg (Albert), har eg framleis inga aning.',
-				'https://sprakradet.no/spraksporsmal-og-svar/kloyvd-infinitiv-/',
+				'Spør ...set inn namn her',
 				'Det ligg i ordet: oppdelt infinitt verbalform',
 				'Når eit verb kan ha to ulike bøyingsformer i fortid.'
 			],
 			correct: 0,
-			explanation:
-				'Eg har faktisk ikkje snøring, men du kan jo prøve å tyde det som står på Språkrådet.'
+			explanation: 'Eg har faktisk ikkje snøring, men du kan jo prøve å tyde det Språkrådet seier.'
 		},
 		{
 			text: 'Som du kanskje veit, får hokjønnsord -a i bunden form eintal og -er / -ene i fleirtal. Korleis bøyer ein då hokjønnsordet "setning"?',
